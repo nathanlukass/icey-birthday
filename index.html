@@ -1,42 +1,110 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset='UTF-8'/>
-  <meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
-  <meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ICEY BIRTHDAY❤️</title>
-
-  <link rel="icon" type="image/x-icon" href="https://malasid.github.io/favicon.png">
-  <meta name="description" content="HTML Bucin Malas.id">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Antique:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
-  <link href="https://feeldreams.github.io/heihbd/style.css" rel="stylesheet" type="text/css" />
-  <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
-  <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(to right, #ffe0ec, #ffe8cc) !important;
-      overflow-x: hidden;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffffff 0%, #ff30d2 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      height: 100vh;
+      color: #333;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    /* BALLOON STYLING */
+    body::before, body::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.6) 1px, transparent 1px);
+      background-size: 10px 10px;
+      animation: glitter 2s linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::after {
+      animation-delay: 1s;
+      opacity: 0.5;
+    }
+
+    @keyframes glitter {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-10px, -10px); }
+    }
+
+    .typewriter {
+      font-family: monospace;
+      overflow: hidden;
+      font-weight: bold;
+      border-right: .20em solid #000000;
+      white-space: nowrap;
+      animation: typing 4s steps(60, end), blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: black }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      z-index: 2;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 80%;
+      max-width: 400px;
+      z-index: 2;
+    }
+
+    .menu a {
+      text-decoration: none;
+      padding: 15px;
+      background: #eec4de;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      font-weight: 600;
+      color: #333;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .menu a:hover {
+      transform: scale(1.05);
+      background: rgb(255, 50, 135);
+    }
+
     .balloon {
-      position: fixed;
-      bottom: -100px;
+      position: absolute;
+      bottom: -150px;
       width: 40px;
       height: 60px;
-      background: radial-gradient(circle at 30% 30%, #ff7eb9, #ff3cac);
       border-radius: 50% 50% 45% 45%;
-      opacity: 0.7;
-      animation: floatUp 10s linear infinite;
-      z-index: 0;
-      box-shadow: inset -4px -4px 10px rgba(255,255,255,0.3);
+      animation: float 10s infinite ease-in;
+      z-index: 1;
     }
 
     .balloon::after {
@@ -44,149 +112,108 @@
       position: absolute;
       bottom: -20px;
       left: 50%;
+      transform: translateX(-50%);
       width: 2px;
       height: 20px;
-      background: #888;
-      transform: translateX(-50%);
+      background: #444;
     }
 
-    @keyframes floatUp {
+    @keyframes float {
       0% {
         transform: translateY(0) scale(1);
-        opacity: 0.9;
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
       }
       100% {
-        transform: translateY(-120vh) scale(0.8);
+        transform: translateY(-120vh) scale(1.1);
         opacity: 0;
       }
     }
+
+    .balloon:nth-child(1)  { left: 5%;  background: #ff6b6b;  animation-delay: 0s;  }
+    .balloon:nth-child(2)  { left: 12%; background: #feca57;  animation-delay: 2s;  }
+    .balloon:nth-child(3)  { left: 20%; background: #48dbfb;  animation-delay: 4s;  }
+    .balloon:nth-child(4)  { left: 28%; background: #1dd1a1;  animation-delay: 1s;  }
+    .balloon:nth-child(5)  { left: 35%; background: #5f27cd;  animation-delay: 3s;  }
+    .balloon:nth-child(6)  { left: 42%; background: #ff9ff3;  animation-delay: 1.5s;}
+    .balloon:nth-child(7)  { left: 50%; background: #00d2d3;  animation-delay: 3.5s;}
+    .balloon:nth-child(8)  { left: 58%; background: #54a0ff;  animation-delay: 0.8s;}
+    .balloon:nth-child(9)  { left: 65%; background: #ff6348;  animation-delay: 2.5s;}
+    .balloon:nth-child(10) { left: 72%; background: #1abc9c;  animation-delay: 1.2s;}
+    .balloon:nth-child(11) { left: 78%; background: #f368e0;  animation-delay: 3.8s;}
+    .balloon:nth-child(12) { left: 84%; background: #ffb142;  animation-delay: 2.2s;}
+    .balloon:nth-child(13) { left: 90%; background: #576574;  animation-delay: 0.5s;}
+    .balloon:nth-child(14) { left: 96%; background: #e84393;  animation-delay: 4.5s;}
+    .balloon:nth-child(15) { left: 2%;  background: #c44569;  animation-delay: 1.8s;}
+
+    /* Audio control button */
+    #audioControl {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 99;
+      background: #fff;
+      border: 2px solid #ff30d2;
+      color: #ff30d2;
+      font-weight: bold;
+      border-radius: 50px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
   </style>
 </head>
 <body>
+  <!-- 15 Floating balloons -->
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
 
-  <audio src="music/hbd.mp3" id="linkmp3" class="sembunyi"></audio>
+  <h1 class="typewriter">WELCOME BIRTHDAY GIRL🥰</h1>
 
-  <div id="bodyblur">
-    <img src="img1/image.png" id="wallpaper"/>
-    <div id="beneranblur"></div>
+  <div class="menu">
+    <a href="gallery.html">📷 PERTAMA BUKA INI</a>
+    <a href="index.html">🎉 KEDUA INI</a>
   </div>
 
-  <div id='Content'>
-    <div id="kadoIn">
-      <img src="https://feeldreams.github.io/kadoin.png"/>
-    </div>
-    <p id="ket">Coba icey klik kado ini</p>
-
-    <div class="kumpulanstiker">
-      <img src="https://feeldreams.github.io/bunga.gif" id="fotostiker"/>
-      <img src="https://feeldreams.github.io/pusn.gif" id="fotostiker1"/>
-      <img src="https://feeldreams.github.io/pandacoklat.gif" id="fotostiker2"/>
-      <img src="https://feeldreams.github.io/cilukba.gif" id="fotostiker3"/>
-      <img src="https://feeldreams.github.io/pandakuning.gif" id="fotostiker4"/>
-      <img src="https://feeldreams.github.io/emawh.gif" id="fotostiker5"/>
-      <img src="https://feeldreams.github.io/pandacoklat.gif" id="fotostiker6"/>
-    </div>
-
-    <p id="halo" class="halo"></p>
-
-    <div><blockquote id='bq' data-text='㊡'>
-      <p id="kalimat">Opey ada sesuatu nih buat icey</p>
-      <p id="pesan1">klik love di bawah</p>
-      <div id="kolombaru">
-        <li id="lv1">❤️</li><li id="lv2">❤️</li><li id="lv3">❤️</li><li id="lv4">❤️</li>
-      </div>
-
-      <p id="pesan2">Tunggu...</p>
-      <p id="pesan3">halo kaka icey</p>
-      <p id="pesan4">Happy Birthday to my lovely icey, opey always here for u no matter what.</p>
-      <p id="pesan5" class="gaya2">all the best i hope for icey, sehat sehat terus neh icey sayang</p>
-      <p id="pesan6" class="gaya2">happy to be with u until now, and i hope forever.</p>
-      <p id="pesan7" class="gaya2">jangan tinggalin jopey ):</p>
-      <p id="pesan8" class="gaya2">ikan hiu melayang layang</p>
-      <p id="pesan9" class="gaya2">I LOVE YOU MORE SAYANG'❤️</p>
-      <p id="pesan10" class="gaya2">have a fabulous day!</p>
-      <p id="opsL">Klik untuk Lanjut</p>
-    </blockquote></div>
-
-    <div id="Tombol"><a id="By">📨 sini Lanjut</a></div>
-    <p id="katatambahan" class="sembunyi">pap dulu baru lanjut xixixixi</p>
-
-    <div id="pesanditolak">
-      <img id="stikerditolak" src="https://feeldreams.github.io/weee.gif"/>
-      <p id="kataditolak">aii masa nimauuuuuuuuuuuuuuuuuu</p>
-    </div>
-  </div>
+  <!-- Audio -->
+  <audio id="bgm" src="music/inst.mp3" autoplay loop></audio>
+  <button id="audioControl" onclick="toggleAudio()">🔊 Mute</button>
 
   <script>
-    const body = document.querySelector("body");
-    const swalst = Swal.mixin({timer: 2300, allowOutsideClick: false, showConfirmButton: false, timerProgressBar: true, imageHeight: 90});
-    audio = new Audio('' + linkmp3.src);
-    ftganti = 0; fungsi = 0; fungsiAwal = 0; deffotostiker = fotostiker.src;
+    const audio = document.getElementById("bgm");
+    const btn = document.getElementById("audioControl");
 
-    function berjatuhan() {
-      const heart = document.createElement("div");
-      heart.className = "fas fa-snowflake";
-      heart.style.left = (Math.random() * 90)+"vw";
-      heart.style.animationDuration = (Math.random()*3)+2+"s";
-      body.appendChild(heart);
-    }
-
-    setInterval(() => {
-      var heartArr = document.querySelectorAll(".fa-snowflake");
-      if (heartArr.length > 100) heartArr[0].remove();
-    }, 100);
-
-    Content.style = "opacity:1;margin-top:16vh";
-    const swals = Swal.mixin({allowOutsideClick: false, cancelButtonColor: '#FF0040', imageHeight: 80});
-
-    document.getElementById("kadoIn").onclick = function() {
-      if(fungsiAwal==0){
-        audio.play();fungsiAwal=1;
-        kadoIn.style="transition:all .8s ease;transform:scale(10);opacity:0";
-        wallpaper.style="transform: scale(1.5);";
-        ket.style="display:none";
-        setTimeout(initengahan,300);setTimeout(inipesan,500);
-      }
-    }
-
-    async function inipesan(){
-      var { value: nama } = await swals.fire({
-        title: 'masukkan nama (icey, micey, miceng, joofel (lain dari itu mo dapa cubit))', input: 'text'
-      });
-      if(nama && nama.length < 11){
-        window.nama = nama;
-        vketikhalo="halo sayangku, " + nama + " ✨";
-        mulainama();
+    function toggleAudio() {
+      if (audio.paused) {
+        audio.play();
+        btn.innerText = "🔊 Mute";
       } else {
-        await swals.fire('Ups!', 'MUSTI ISI NAMA HIH, NIMBOLE PANJANG!');inipesan();
+        audio.pause();
+        btn.innerText = "🔈 Play";
       }
     }
 
-    // Tambahkan balon melayang
-    document.addEventListener('DOMContentLoaded', () => {
-      const numBalloons = 30;
-      for (let i = 0; i < numBalloons; i++) {
-        const balloon = document.createElement('div');
-        balloon.classList.add('balloon');
-        balloon.style.left = Math.random() * 100 + 'vw';
-        balloon.style.animationDelay = Math.random() * 10 + 's';
-        balloon.style.background = `radial-gradient(circle at 30% 30%, hsl(${Math.random()*360}, 100%, 75%), hsl(${Math.random()*360}, 100%, 65%))`;
-        document.body.appendChild(balloon);
+    // Try to autoplay after interaction
+    document.body.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play().catch(() => {});
       }
     });
-
-    // WhatsApp
-    var tanya = 'Icey mau hadiah?';
-    var opstanya = '😘';
-    var tompositif = 'MAU';
-    var tomnegatif = 'ND';
-
-    async function menuju(){
-      pesanwhatsapp = "Makasii udah ngucapin " + nama + " ultah ><";
-      await swals.fire('OK!', 'Kirim jawabannya ke WhatsApp aku, ya!', 'success');
-      window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp;
-    }
   </script>
-  <script src="https://malasid.github.io/html/hbd.js"></script>
 </body>
 </html>
