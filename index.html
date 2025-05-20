@@ -191,12 +191,25 @@
   </div>
 
   <!-- Audio -->
-  <audio id="bgm" src="music/inst.mp3" autoplay loop></audio>
+  <audio id="bgm" src="music/inst.mp3" autoplay loop muted></audio>
   <button id="audioControl" onclick="toggleAudio()">🔊 Mute</button>
 
   <script>
     const audio = document.getElementById("bgm");
     const btn = document.getElementById("audioControl");
+
+    window.addEventListener('load', () => {
+      // Mainkan audio dengan muted dulu supaya autoplay bisa jalan
+      audio.muted = true;
+      audio.play().then(() => {
+        // Kalau sudah jalan, hilangkan mute
+        audio.muted = false;
+        btn.innerText = "🔊 Mute";
+      }).catch(() => {
+        // Jika gagal autoplay, tetap muted dan tombol Play
+        btn.innerText = "🔈 Play";
+      });
+    });
 
     function toggleAudio() {
       if (audio.paused) {
@@ -208,10 +221,11 @@
       }
     }
 
-    // Try to autoplay after interaction
+    // Jika user klik body dan audio paused, coba play lagi
     document.body.addEventListener('click', () => {
       if (audio.paused) {
         audio.play().catch(() => {});
+        btn.innerText = "🔊 Mute";
       }
     });
   </script>
